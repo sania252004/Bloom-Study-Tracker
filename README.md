@@ -1,4 +1,4 @@
-# Bloom Study Tracker — Version 2
+# Bloom Study Tracker 
 
 A responsive browser-based study planner with separate subject pages and a configurable focus timer.
 
