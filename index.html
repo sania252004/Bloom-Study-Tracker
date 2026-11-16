@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8edf1" />
+  <title>Bloom — Study Space</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="Bloom home">
+      <span class="brand-icon">B.</span>
+      <span><strong>Bloom</strong><small>YOUR STUDY SPACE</small></span>
+    </a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav class="main-nav">
+      <a href="#home" data-nav="home"><span class="nav-icon">⌂</span> Overview</a>
+      <a href="#physics" data-nav="physics"><span class="nav-icon">◉</span> Physics</a>
+      <a href="#chemistry" data-nav="chemistry"><span class="nav-icon">◈</span> Chemistry</a>
+      <a href="#botany" data-nav="botany"><span class="nav-icon">❀</span> Botany</a>
+      <a href="#zoology" data-nav="zoology"><span class="nav-icon">✿</span> Zoology</a>
+      <a href="#focus" data-nav="focus"><span class="nav-icon">◷</span> Focus timer</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="quote-mark">“</div>
+      <p>Little by little,<br>one travels far.</p>
+      <small>— J.R.R. Tolkien</small>
+      <div class="sidebar-flower">✿</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="mobile-brand"><span class="brand-icon">b.</span><strong>bloom</strong></div>
+      <div class="crumb" id="breadcrumb">YOUR WORKSPACE <span>/</span> OVERVIEW</div>
+      <div class="top-actions">
+        <span class="today-label" id="todayLabel"></span>
+        <button class="btn btn-soft" id="exportBtn">↧ <span>Backup</span></button>
+        <label class="btn btn-soft import-btn">↥ <span>Restore</span><input id="importFile" type="file" accept="application/json" hidden></label>
+      </div>
+    </header>
+
+    <section id="homePage" class="page-view">
+      <div class="hero">
+        <div>
+          <div class="overline">A FRESH PAGE, A FRESH START</div>
+          <h1>Your goals are<br><em>within reach.</em></h1>
+          <p>Welcome to your little corner of focus. Make today count, one chapter at a time.</p>
+          <a class="btn btn-dark" href="#focus">Start a focus session <span>→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div><div class="plant-pot"></div><div class="plant-stem"></div>
+          <div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="leaf leaf-three"></div>
+          <div class="book book-one"></div><div class="book book-two"></div><div class="sparkle">✦</div>
+          <div class="hero-note">take it<br>one step<br>at a time</div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div><div class="overline">YOUR PROGRESS</div><h2>A little progress adds up.</h2></div>
+        <span class="soft-pill" id="chapterCount">0 chapters added</span>
+      </div>
+      <div class="overview-grid">
+        <div class="stat-card progress-card">
+          <div class="stat-top"><span>Overall completion</span><span class="stat-icon">✧</span></div>
+          <div class="big-number" id="overallPercent">0<small>%</small></div>
+          <div class="bar"><span id="overallBar"></span></div>
+          <p id="overallTasks">0 of 0 study tasks completed</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Chapters added</span><span class="stat-icon">▤</span></div>
+          <div class="big-number" id="totalChapters">0</div>
+          <p>Across all four subjects</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Tasks in progress</span><span class="stat-icon">◷</span></div>
+          <div class="big-number" id="inProgressTasks">0</div>
+          <p>Keep the momentum going</p>
+        </div>
+      </div>
+
+      <div class="section-heading subject-heading">
+        <div><div class="overline">YOUR SUBJECTS</div><h2>Choose where to begin.</h2></div>
+      </div>
+      <div class="subject-tiles">
+        <a href="#physics" class="subject-tile physics-tile"><span class="tile-symbol">◉</span><span><strong>Physics</strong><small id="physicsMeta">0 chapters</small></span><b>↗</b></a>
+        <a href="#chemistry" class="subject-tile chemistry-tile"><span class="tile-symbol">◈</span><span><strong>Chemistry</strong><small id="chemistryMeta">0 chapters</small></span><b>↗</b></a>
+        <a href="#botany" class="subject-tile botany-tile"><span class="tile-symbol">❀</span><span><strong>Botany</strong><small id="botanyMeta">0 chapters</small></span><b>↗</b></a>
+        <a href="#zoology" class="subject-tile zoology-tile"><span class="tile-symbol">✿</span><span><strong>Zoology</strong><small id="zoologyMeta">0 chapters</small></span><b>↗</b></a>
+      </div>
+      <div class="bottom-tip"><span>✿</span><p><strong>A gentle reminder</strong><br>You don't have to finish everything today. Just keep showing up.</p></div>
+    </section>
+
+    <section id="subjectPage" class="page-view hidden">
+      <div class="subject-banner" id="subjectBanner">
+        <div><div class="overline" id="subjectEyebrow">SUBJECT WORKSPACE</div><h1 id="subjectTitle">Physics</h1><p>Track every chapter, at your own pace.</p></div>
+        <div class="subject-banner-art" id="subjectArt">◉</div>
+      </div>
+      <div class="section-heading table-heading">
+        <div><div class="overline">CHAPTER CHECKLIST</div><h2>Your chapter progress</h2><p class="muted">Only chapter names are editable. Update each module using its dropdown.</p></div>
+        <div class="table-actions"><input id="chapterSearch" class="search" type="search" placeholder="⌕ Search chapters"><button class="btn btn-dark" id="addChapterBtn">＋ Add chapter</button></div>
+      </div>
+      <div class="table-card">
+        <div class="table-scroll">
+          <table><thead><tr><th class="chapter-col">CHAPTER NAME</th><th>MODULE</th><th>RACE MODULE</th><th>NCERT</th><th>JEE MAINS</th><th>NEET PYQS</th><th></th></tr></thead><tbody id="chapterRows"></tbody></table>
+        </div>
+        <div class="table-footer"><span id="subjectFooter">0 chapters</span><button class="text-btn" id="printSubjectBtn">▤ Print this subject</button></div>
+      </div>
+      <div class="subject-bottom"><span>✿</span> Progress is saved automatically on this device.</div>
+    </section>
+
+    <section id="focusPage" class="page-view hidden">
+      <div class="focus-intro"><div class="overline">MAKE SPACE FOR WHAT MATTERS</div><h1>Find your <em>focus.</em></h1><p>One task at a time. Give yourself permission to concentrate.</p></div>
+      <div class="focus-layout">
+        <div class="timer-card">
+          <div class="timer-mode" id="timerMode">FOCUS SESSION</div>
+          <div class="timer-ring" id="timerRing"><div class="timer-inner"><div id="timerDisplay">25:00</div><small id="timerCaption">TIME TO FOCUS</small></div></div>
+          <div class="timer-controls"><button class="btn btn-dark" id="startPauseBtn">Start focus</button><button class="btn btn-soft" id="resetTimerBtn">↺ Reset</button></div>
+          <div class="timer-presets"><button data-minutes="25" class="preset active">25 min</button><button data-minutes="45" class="preset">45 min</button><button data-minutes="60" class="preset">60 min</button><button data-minutes="custom" class="preset">Custom</button></div>
+          <div class="custom-time hidden" id="customTime"><label for="customMinutes">Set minutes</label><input id="customMinutes" type="number" min="1" max="180" value="30"><button class="btn btn-soft" id="applyCustom">Apply</button></div>
+        </div>
+        <div class="focus-side">
+          <div class="focus-note"><span class="note-flower">✿</span><div class="overline">A NOTE TO SELF</div><h2>Be here.<br>Be present.</h2><p>Put away distractions, take a deep breath, and give this one session your best.</p></div>
+          <div class="break-card"><div><strong>Need a break?</strong><p>Rest is part of the process, too.</p></div><button id="breakBtn" class="btn btn-soft">Start 5 min break</button></div>
+          <div class="session-count"><span>Sessions completed today</span><strong id="sessionCount">0</strong></div>
+        </div>
+      </div>
+      <div class="focus-footnote">Tip: Try 25 minutes of focused study followed by a short break. Find the rhythm that works for you.</div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
