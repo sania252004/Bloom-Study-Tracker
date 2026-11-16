@@ -75,7 +75,7 @@ function updateTimer(){
   const progress=duration?((duration-remaining)/duration):0;
   const deg=Math.round(progress*360);
   document.getElementById("timerRing").style.background=`conic-gradient(#c887a0 0deg ${deg}deg,#f5e9ee ${deg}deg 360deg)`;
-  document.title=`${formatTime(remaining)} — Bloom`;
+  document.title="Bloom Study Tracker";
 }
 function stopTimer(){if(timerId){clearInterval(timerId);timerId=null;}running=false;updateTimer();}
 function setTimer(minutes,newMode="focus"){
