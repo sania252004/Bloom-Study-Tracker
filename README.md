@@ -3,7 +3,7 @@
 A responsive browser-based study planner with separate subject pages and a configurable focus timer.
 
 ## Run on Windows
-1. Download and extract `bloom-study-tracker-v2.zip`.
+1. Download and extract `bloom-study-tracker.zip`.
 2. Open the extracted folder.
 3. Double-click `index.html` to launch in Chrome, Edge, Firefox, or another modern browser.
 4. No Node.js, npm, server, or installation is required.
